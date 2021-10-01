@@ -1,0 +1,29 @@
+@use './variables' as var;
+
+@mixin responsive($breakpoint) {
+  @if map-has-key(var.$breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get(var.$breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+@mixin hover($ie: true) {
+  &:focus {
+    @content;
+  }
+
+  @media (hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @if $ie {
+    @at-root .ua-ie &:hover {
+      @content;
+    }
+  }
+}

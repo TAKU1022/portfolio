@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function getLetterSpacing($letterSpacing) {
+  @return math.div($letterSpacing, 1000) + em;
+}
+
+@function getLineHeight($lineHeight, $fontSize) {
+  @return math.div($lineHeight, $fontSize);
+}
