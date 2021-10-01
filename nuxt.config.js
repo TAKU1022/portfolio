@@ -51,6 +51,9 @@ export default {
   },
 
   styleResources: {
-    scss: ['~/assets/scss/abstracts/_index.scss'],
+    scss: [
+      '~/assets/scss/abstracts/_variables.scss',
+      '~/assets/scss/abstracts/_mixins.scss',
+    ],
   },
 };
