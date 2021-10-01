@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [{ src: '~/assets/scss/reset.scss' }],
+  css: [{ src: '~/assets/scss/style.scss' }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -36,7 +36,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/style-resources'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -48,5 +48,9 @@ export default {
         },
       },
     },
+  },
+
+  styleResources: {
+    scss: ['~/assets/scss/abstracts/_index.scss'],
   },
 };
