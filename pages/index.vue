@@ -1,7 +1,14 @@
 <template>
-  <Tutorial/>
+  <div>
+    <Header />
+  </div>
 </template>
 
 <script>
-export default {}
+  import 'focus-visible';
+  import Header from '~/components/layouts/Header.vue';
+
+  export default {
+    components: { Header },
+  };
 </script>
