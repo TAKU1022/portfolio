@@ -36,7 +36,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -55,5 +55,11 @@ export default {
       '~/assets/scss/abstracts/_variables.scss',
       '~/assets/scss/abstracts/_mixins.scss',
     ],
+  },
+
+  webfontloader: {
+    google: {
+      families: ['Lato:400,500,600,700', 'Lora:400,500,600,700'],
+    },
   },
 };
