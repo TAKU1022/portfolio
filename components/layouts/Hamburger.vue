@@ -12,15 +12,15 @@
 
 <style lang="scss" scoped>
   .l-hamburger {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     width: 32px;
     height: 28px;
     cursor: pointer;
     @include responsive(md) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-direction: column;
+      display: none;
     }
 
     .l-hamburger__menu {
