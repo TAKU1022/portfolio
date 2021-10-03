@@ -1,21 +1,21 @@
 <template>
-  <header class="l-header">
+  <header id="header" class="l-header">
     <NuxtLink class="l-header__logo" to="/#">
       <span class="l-header__logo__main">TAKU</span
       ><span class="l-header__logo__sub">portfolio</span>
     </NuxtLink>
     <nav class="l-header__nav">
       <ul class="l-header__list">
-        <li class="l-header__list__item">
+        <li>
           <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
         </li>
-        <li class="l-header__list__item">
+        <li>
           <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
         </li>
-        <li class="l-header__list__item">
+        <li>
           <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
         </li>
-        <li class="l-header__list__item">
+        <li>
           <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
         </li>
       </ul>
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Lora', serif;
+    font-family: $fontLora;
     padding: 8px 24px;
     z-index: 888;
     @include responsive(md) {
@@ -80,21 +80,42 @@
     .l-header__list {
       display: grid;
       grid-template-columns: repeat(4, auto);
-      gap: 4rem;
+      gap: 3.2rem;
       @include responsive(lg) {
-        gap: 8rem;
-      }
-    }
-
-    .l-header__list__item {
-      font-size: 1.8rem;
-      @include responsive(lg) {
-        font-size: 2.2rem;
+        gap: 7.2rem;
       }
     }
 
     .l-header__link {
+      font-size: 1.8rem;
       font-weight: bold;
+      padding: 8px;
+      position: relative;
+      @include hover {
+        &::after {
+          transform: scale(1, 1);
+        }
+      }
+      @include responsive(lg) {
+        font-size: 2.2rem;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        background-color: $primaryDark;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 4px;
+        transition: transform 0.3s;
+        transform-origin: left top;
+        transform: scale(0, 1);
+        will-change: transform;
+        @include responsive(lg) {
+          height: 3px;
+        }
+      }
     }
   }
 </style>
