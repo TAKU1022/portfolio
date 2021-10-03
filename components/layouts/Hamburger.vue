@@ -17,7 +17,7 @@
     align-items: center;
     flex-direction: column;
     width: 32px;
-    height: 28px;
+    height: 24px;
     cursor: pointer;
     @include responsive(md) {
       display: none;

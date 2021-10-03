@@ -41,6 +41,7 @@
     align-items: center;
     font-family: 'Lora', serif;
     padding: 8px 24px;
+    z-index: 888;
     @include responsive(md) {
       padding: 8px 48px 8px 32px;
     }
