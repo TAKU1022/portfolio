@@ -1,16 +1,16 @@
 <template>
   <div>
     <Header />
-    <TopSection />
+    <Main />
   </div>
 </template>
 
 <script>
   import 'focus-visible';
   import Header from '~/components/layouts/Header.vue';
-  import TopSection from '~/components/sections/TopSection.vue';
+  import Main from '~/components/layouts/Main.vue';
 
   export default {
-    components: { Header, TopSection },
+    components: { Header, Main },
   };
 </script>
