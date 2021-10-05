@@ -28,7 +28,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 2500px;
     padding: 16px;
+    margin: 0 auto;
     position: relative;
 
     &::before,
@@ -67,6 +69,7 @@
     .p-home-top__title__english {
       font-family: $fontLora;
       font-size: 4rem;
+      letter-spacing: 0.03em;
       @include responsive(sm) {
         font-size: 6rem;
       }
