@@ -7,6 +7,10 @@
     padding: 120px 0;
   }
 
+  &--products {
+    background-color: $primaryAccent;
+  }
+
   .p-home-section__title {
     display: flex;
     flex-direction: column;
@@ -15,13 +19,13 @@
     max-width: 800px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 24px;
+    margin-bottom: 56px;
     @include responsive(md) {
-      margin-bottom: 32px;
+      margin-bottom: 80px;
     }
   }
 
-  .p-home-section__title__japanese {
+  .p-home-section__title-japanese {
     font-size: 1.2rem;
     margin-bottom: 8px;
     @include responsive(md) {
@@ -29,7 +33,7 @@
     }
   }
 
-  .p-home-section__title__english {
+  .p-home-section__title-english {
     font-family: $fontLora;
     font-size: 3.2rem;
     @include responsive(md) {

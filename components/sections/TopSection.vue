@@ -2,9 +2,9 @@
   <section class="p-home-top">
     <div>
       <h1 class="p-home-top__title">
-        <span class="p-home-top__title__english">Uchida Takumi</span>
+        <span class="p-home-top__title-english">Uchida Takumi</span>
         <br />
-        <span class="p-home-top__title__japanese">のポートフォリオ</span>
+        <span class="p-home-top__title-japanese">のポートフォリオ</span>
       </h1>
       <ScrollLink />
     </div>
@@ -16,21 +16,16 @@
 
   export default {
     components: { ScrollLink },
-    mounted() {
-      window.console.log('mounted');
-    },
   };
 </script>
 
 <style lang="scss" scoped>
   .p-home-top {
-    min-height: 100vh;
+    min-height: var(--vh, 100vh);
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 2500px;
     padding: 16px;
-    margin: 0 auto;
     position: relative;
 
     &::before,
@@ -63,10 +58,10 @@
     .p-home-top__title {
       text-align: center;
       font-weight: bold;
-      padding-bottom: 80px;
+      padding-bottom: 48px;
     }
 
-    .p-home-top__title__english {
+    .p-home-top__title-english {
       font-family: $fontLora;
       font-size: 4rem;
       letter-spacing: 0.03em;
@@ -78,7 +73,7 @@
       }
     }
 
-    .p-home-top__title__japanese {
+    .p-home-top__title-japanese {
       font-size: 3.2rem;
       @include responsive(sm) {
         font-size: 5.2rem;

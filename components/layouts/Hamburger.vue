@@ -16,8 +16,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    width: 32px;
-    height: 24px;
+    width: 34px;
+    height: 22px;
     cursor: pointer;
     @include responsive(md) {
       display: none;
@@ -28,6 +28,7 @@
       width: 100%;
       height: 3px;
       background-color: $primaryDark;
+      border-radius: 5px;
     }
   }
 </style>
