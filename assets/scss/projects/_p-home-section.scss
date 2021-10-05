@@ -19,9 +19,9 @@
     max-width: 800px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 24px;
+    margin-bottom: 56px;
     @include responsive(md) {
-      margin-bottom: 32px;
+      margin-bottom: 80px;
     }
   }
 
