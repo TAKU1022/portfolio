@@ -36,7 +36,7 @@
   .l-header {
     position: fixed;
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     font-family: $fontLora;

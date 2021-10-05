@@ -1,0 +1,42 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.p-home-section {
+  padding: 80px 0;
+  @include responsive(md) {
+    padding: 120px 0;
+  }
+
+  .p-home-section__title {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 24px;
+    @include responsive(md) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .p-home-section__title__japanese {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    @include responsive(md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .p-home-section__title__english {
+    font-family: $fontLora;
+    font-size: 3.2rem;
+    @include responsive(md) {
+      font-size: 4rem;
+    }
+    @include responsive(xl) {
+      font-size: 5rem;
+    }
+  }
+}

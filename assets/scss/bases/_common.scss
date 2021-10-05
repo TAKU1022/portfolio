@@ -16,3 +16,9 @@ body {
 .js-focus-visible :focus:not(.focus-visible) {
   outline: 0;
 }
+
+.wrapper {
+  max-width: 1248px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
