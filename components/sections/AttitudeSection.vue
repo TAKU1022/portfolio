@@ -35,8 +35,7 @@
 <style lang="scss" scoped>
   .p-home-attitude {
     max-width: 800px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
 
     .p-home-attitude__list {
       display: grid;
