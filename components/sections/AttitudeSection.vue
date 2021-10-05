@@ -2,24 +2,24 @@
   <section class="p-home-section">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title__japanese">心構え</span>
-        <span class="p-home-section__title__english">Attitude</span>
+        <span class="p-home-section__title-japanese">心構え</span>
+        <span class="p-home-section__title-english">Attitude</span>
       </h2>
       <div class="p-home-attitude">
         <ul class="p-home-attitude__list">
-          <li class="p-home-attitude__list__item">
+          <li class="p-home-attitude__list-item">
             ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
           </li>
-          <li class="p-home-attitude__list__item">
+          <li class="p-home-attitude__list-item">
             ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
           </li>
-          <li class="p-home-attitude__list__item">
+          <li class="p-home-attitude__list-item">
             ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
           </li>
-          <li class="p-home-attitude__list__item">
+          <li class="p-home-attitude__list-item">
             ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
           </li>
-          <li class="p-home-attitude__list__item">
+          <li class="p-home-attitude__list-item">
             ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
           </li>
         </ul>
@@ -42,7 +42,7 @@
       gap: 1.6rem;
     }
 
-    .p-home-attitude__list__item {
+    .p-home-attitude__list-item {
       font-size: 1.6rem;
     }
   }

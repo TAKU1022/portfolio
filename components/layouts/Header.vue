@@ -2,8 +2,8 @@
   <transition name="slide">
     <header v-if="isShow" id="header" class="l-header">
       <NuxtLink class="l-header__logo" to="/">
-        <span class="l-header__logo__main">TAKU</span
-        ><span class="l-header__logo__sub">portfolio</span>
+        <span class="l-header__logo-main">TAKU</span
+        ><span class="l-header__logo-sub">portfolio</span>
       </NuxtLink>
       <nav class="l-header__nav">
         <ul class="l-header__list">
@@ -45,7 +45,7 @@
     methods: {
       toggleHeaderState() {
         document.addEventListener('scroll', () => {
-          if (window.innerHeight - 40 > window.pageYOffset) {
+          if (window.innerHeight - 80 > window.pageYOffset) {
             this.isShow = false;
           } else {
             this.isShow = true;
@@ -78,6 +78,7 @@
   .l-header {
     position: fixed;
     width: 100%;
+    background-color: $primaryWhite;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,6 +86,7 @@
     padding: 8px 24px;
     z-index: 888;
     @include responsive(md) {
+      background-color: transparent;
       padding: 8px 48px 8px 32px;
     }
 
@@ -95,7 +97,7 @@
       flex-direction: column;
     }
 
-    .l-header__logo__main {
+    .l-header__logo-main {
       font-size: 2.4rem;
       font-weight: bold;
       @include responsive(lg) {
@@ -103,7 +105,7 @@
       }
     }
 
-    .l-header__logo__sub {
+    .l-header__logo-sub {
       font-size: 1.2rem;
       font-weight: 500;
       margin-top: -0.2em;
