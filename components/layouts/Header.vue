@@ -1,27 +1,29 @@
 <template>
-  <header id="header" class="l-header">
-    <NuxtLink class="l-header__logo" to="/#">
-      <span class="l-header__logo__main">TAKU</span
-      ><span class="l-header__logo__sub">portfolio</span>
-    </NuxtLink>
-    <nav class="l-header__nav">
-      <ul class="l-header__list">
-        <li>
-          <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
-        </li>
-      </ul>
-    </nav>
-    <Hamburger />
-  </header>
+  <transition name="slide">
+    <header v-if="isShow" id="header" class="l-header">
+      <NuxtLink class="l-header__logo" to="/">
+        <span class="l-header__logo__main">TAKU</span
+        ><span class="l-header__logo__sub">portfolio</span>
+      </NuxtLink>
+      <nav class="l-header__nav">
+        <ul class="l-header__list">
+          <li>
+            <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
+          </li>
+        </ul>
+      </nav>
+      <Hamburger />
+    </header>
+  </transition>
 </template>
 
 <script>
@@ -29,14 +31,54 @@
 
   export default {
     components: { Hamburger },
+
+    data() {
+      return {
+        isShow: false,
+      };
+    },
+
+    mounted() {
+      this.toggleHeaderState();
+    },
+
+    methods: {
+      toggleHeaderState() {
+        document.addEventListener('scroll', () => {
+          if (window.innerHeight - 40 > window.pageYOffset) {
+            this.isShow = false;
+          } else {
+            this.isShow = true;
+          }
+        });
+      },
+    },
   };
 </script>
 
 <style lang="scss" scoped>
+  .slide-enter-active {
+    animation: slide-in-header 0.5s;
+  }
+
+  .slide-leave-active {
+    animation: slide-in-header 0.5s reverse;
+  }
+
+  @keyframes slide-in-header {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .l-header {
     position: fixed;
     width: 100%;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: $fontLora;
