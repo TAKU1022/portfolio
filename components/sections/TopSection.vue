@@ -16,9 +16,6 @@
 
   export default {
     components: { ScrollLink },
-    mounted() {
-      window.console.log('mounted');
-    },
   };
 </script>
 
