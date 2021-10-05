@@ -24,7 +24,7 @@
 
 <style lang="scss" scoped>
   .p-home-top {
-    min-height: 100vh;
+    min-height: var(--vh, 100vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@
     .p-home-top__title {
       text-align: center;
       font-weight: bold;
-      padding-bottom: 80px;
+      padding-bottom: 48px;
     }
 
     .p-home-top__title__english {
