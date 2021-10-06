@@ -44,7 +44,7 @@
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
             },
-            name: 'こんだての森',
+            name: 'こんだての森（献立提案アプリ）',
           },
           {
             id: 'portfolio',
@@ -52,7 +52,7 @@
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
             },
-            name: 'ポートフォリオ',
+            name: 'ポートフォリオ（当サイト）',
           },
         ],
       };
@@ -107,7 +107,6 @@
     }
 
     .p-home-product__name {
-      text-align: center;
       font-size: 2rem;
       font-weight: bold;
       padding: 0 24px;
