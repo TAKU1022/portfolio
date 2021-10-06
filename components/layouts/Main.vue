@@ -15,4 +15,3 @@
     components: { TopSection, PointsSection, ProductsSection },
   };
 </script>
-, ProductsSection

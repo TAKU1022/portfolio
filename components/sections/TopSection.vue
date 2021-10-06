@@ -46,6 +46,10 @@
       left: 16px;
       border-top: 3px solid $primaryDark;
       border-left: 3px solid $primaryDark;
+      @include responsive(md) {
+        top: 32px;
+        left: 32px;
+      }
     }
 
     &::after {
@@ -53,6 +57,10 @@
       bottom: 16px;
       border-right: 3px solid $primaryDark;
       border-bottom: 3px solid $primaryDark;
+      @include responsive(md) {
+        right: 32px;
+        bottom: 32px;
+      }
     }
 
     .p-home-top__title {

@@ -15,12 +15,13 @@
           <div class="p-home-product__container">
             <picture>
               <source
-                :srcset="require(`@/assets/images/${product.image.webp}`)"
+                :srcset="require(`~/assets/images/${product.image.webp}`)"
                 type="image/webp"
               />
               <img
                 class="p-home-product__image"
-                :src="require(`@/assets/images/${product.image.png}`)"
+                :src="require(`~/assets/images/${product.image.png}`)"
+                loading="lazy"
                 alt=""
               />
             </picture>
@@ -43,7 +44,7 @@
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
             },
-            name: 'こんだての森',
+            name: 'こんだての森（献立提案アプリ）',
           },
           {
             id: 'portfolio',
@@ -51,7 +52,7 @@
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
             },
-            name: 'ポートフォリオ',
+            name: 'ポートフォリオ（当サイト）',
           },
         ],
       };
@@ -97,6 +98,8 @@
 
     .p-home-product__image {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -104,7 +107,6 @@
     }
 
     .p-home-product__name {
-      text-align: center;
       font-size: 2rem;
       font-weight: bold;
       padding: 0 24px;
