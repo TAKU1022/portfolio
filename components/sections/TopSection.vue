@@ -42,15 +42,15 @@
     }
 
     &::before {
-      top: 16px;
-      left: 16px;
+      top: 32px;
+      left: 32px;
       border-top: 3px solid $primaryDark;
       border-left: 3px solid $primaryDark;
     }
 
     &::after {
-      right: 16px;
-      bottom: 16px;
+      right: 32px;
+      bottom: 32px;
       border-right: 3px solid $primaryDark;
       border-bottom: 3px solid $primaryDark;
     }
