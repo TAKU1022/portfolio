@@ -44,13 +44,17 @@
 
     methods: {
       toggleHeaderState() {
-        document.addEventListener('scroll', () => {
-          if (window.innerHeight - 80 > window.pageYOffset) {
-            this.isShow = false;
-          } else {
-            this.isShow = true;
-          }
-        });
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (window.innerHeight - 80 > window.pageYOffset) {
+              this.isShow = false;
+            } else {
+              this.isShow = true;
+            }
+          },
+          { passive: true }
+        );
       },
     },
   };
@@ -85,6 +89,7 @@
     font-family: $fontLora;
     padding: 8px 24px;
     z-index: 888;
+    will-change: transform;
     @include responsive(md) {
       background-color: transparent;
       padding: 8px 48px 8px 32px;
