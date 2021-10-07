@@ -82,15 +82,18 @@
   .l-header {
     position: fixed;
     width: 100%;
+    height: 68px;
     background-color: $primaryWhite;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 0 10px rgba(#000, 0.1);
     font-family: $fontLora;
-    padding: 8px 24px;
+    padding: 0 0 0 16px;
     z-index: 888;
     will-change: transform;
     @include responsive(md) {
+      box-shadow: none;
       background-color: transparent;
       padding: 8px 48px 8px 32px;
     }
@@ -113,7 +116,7 @@
     .l-header__logo-sub {
       font-size: 1.2rem;
       font-weight: 500;
-      margin-top: -0.2em;
+      margin-top: -0.3em;
       @include responsive(lg) {
         font-size: 1.4rem;
       }
