@@ -28,41 +28,6 @@
     padding: 16px;
     position: relative;
 
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      width: 64px;
-      height: 64px;
-      position: absolute;
-      @include responsive(lg) {
-        width: 80px;
-        height: 80px;
-      }
-    }
-
-    &::before {
-      top: 16px;
-      left: 16px;
-      border-top: 3px solid $primaryDark;
-      border-left: 3px solid $primaryDark;
-      @include responsive(md) {
-        top: 32px;
-        left: 32px;
-      }
-    }
-
-    &::after {
-      right: 16px;
-      bottom: 16px;
-      border-right: 3px solid $primaryDark;
-      border-bottom: 3px solid $primaryDark;
-      @include responsive(md) {
-        right: 32px;
-        bottom: 32px;
-      }
-    }
-
     .p-home-top__title {
       text-align: center;
       font-weight: bold;
