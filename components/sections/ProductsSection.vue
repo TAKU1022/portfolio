@@ -70,24 +70,18 @@
   }
 
   .p-home-product {
-    margin: 0 -24px;
     @include hover {
       .p-home-product__container {
         transform: scale(0.9);
       }
     }
-    @include responsive(md) {
-      margin: 0;
-    }
 
     .p-home-product__container {
+      border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       position: relative;
       transition: transform 0.3s ease-out;
-      @include responsive(sm) {
-        margin-bottom: 16px;
-      }
 
       &::before {
         content: '';
@@ -108,7 +102,7 @@
     }
 
     .p-home-product__name {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
       padding: 0 24px;
     }
