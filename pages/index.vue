@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-    <DrawerMenu />
     <Main />
   </div>
 </template>
@@ -10,10 +9,9 @@
   import 'focus-visible';
   import Header from '~/components/layouts/Header.vue';
   import Main from '~/components/layouts/Main.vue';
-  import DrawerMenu from '~/components/layouts/DrawerMenu.vue';
 
   export default {
-    components: { Header, Main, DrawerMenu },
+    components: { Header, Main },
 
     mounted() {
       this.setFillHeight();
