@@ -1,74 +1,33 @@
 <template>
-  <transition name="slide">
-    <header v-if="isShow" id="header" class="l-header">
-      <NuxtLink class="l-header__logo" to="/">
-        <span class="l-header__logo-main">TAKU</span
-        ><span class="l-header__logo-sub">portfolio</span>
-      </NuxtLink>
-      <nav class="l-header__nav">
-        <ul class="l-header__list">
-          <li>
-            <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
-          </li>
-        </ul>
-      </nav>
-      <Hamburger />
-    </header>
-  </transition>
+  <header id="header" class="l-header">
+    <NuxtLink class="l-header__logo" to="/">
+      <span class="l-header__logo-main">TAKU</span
+      ><span class="l-header__logo-sub">portfolio</span>
+    </NuxtLink>
+    <nav class="l-header__nav">
+      <ul class="l-header__list">
+        <li>
+          <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script>
-  import Hamburger from './Hamburger.vue';
-
-  export default {
-    components: { Hamburger },
-
-    data() {
-      return {
-        isShow: false,
-      };
-    },
-
-    mounted() {
-      this.toggleHeaderState();
-    },
-
-    methods: {
-      toggleHeaderState() {
-        window.addEventListener(
-          'scroll',
-          () => {
-            if (window.innerHeight - 80 > window.pageYOffset) {
-              this.isShow = false;
-            } else {
-              this.isShow = true;
-            }
-          },
-          { passive: true }
-        );
-      },
-    },
-  };
+  export default {};
 </script>
 
 <style lang="scss" scoped>
-  .slide-enter-active {
-    animation: slide-in-header 0.5s;
-  }
-
-  .slide-leave-active {
-    animation: slide-in-header 0.5s reverse;
-  }
-
   @keyframes slide-in-header {
     0% {
       transform: translateY(-100%);
@@ -83,14 +42,12 @@
     position: fixed;
     width: 100%;
     height: 68px;
-    background-color: $primaryWhite;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(#000, 0.1);
     font-family: $fontLora;
     padding: 0 0 0 16px;
-    z-index: 888;
+    z-index: 999;
     will-change: transform;
     @include responsive(md) {
       box-shadow: none;
