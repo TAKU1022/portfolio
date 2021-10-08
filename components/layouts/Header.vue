@@ -10,7 +10,7 @@
           <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">Points</NuxtLink>
+          <NuxtLink class="l-header__link" to="/#">Attitude</NuxtLink>
         </li>
         <li>
           <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
@@ -41,18 +41,17 @@
   .l-header {
     position: fixed;
     width: 100%;
-    height: 68px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: $fontLora;
-    padding: 0 0 0 16px;
+    padding: 16px;
     z-index: 999;
     will-change: transform;
     @include responsive(md) {
       box-shadow: none;
       background-color: transparent;
-      padding: 8px 48px 8px 32px;
+      padding: 16px 32px;
     }
 
     .l-header__logo {
@@ -60,11 +59,13 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      line-height: 1;
     }
 
     .l-header__logo-main {
       font-size: 2.4rem;
       font-weight: bold;
+      margin-bottom: 8px;
       @include responsive(lg) {
         font-size: 3.2rem;
       }
@@ -73,7 +74,6 @@
     .l-header__logo-sub {
       font-size: 1.2rem;
       font-weight: 500;
-      margin-top: -0.3em;
       @include responsive(lg) {
         font-size: 1.4rem;
       }
@@ -96,7 +96,7 @@
     }
 
     .l-header__link {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
       padding: 8px;
       position: relative;
@@ -106,7 +106,7 @@
         }
       }
       @include responsive(lg) {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
       }
 
       &::after {
