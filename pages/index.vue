@@ -1,17 +1,19 @@
 <template>
   <div>
-    <Header />
-    <Main />
+    <CommonHeader />
+    <HomeMain />
+    <CommonFooter />
   </div>
 </template>
 
 <script>
   import 'focus-visible';
-  import Header from '~/components/layouts/Header.vue';
-  import Main from '~/components/layouts/Main.vue';
+  import CommonHeader from '~/components/layouts/CommonHeader.vue';
+  import HomeMain from '~/components/layouts/HomeMain.vue';
+  import CommonFooter from '~/components/layouts/CommonFooter.vue';
 
   export default {
-    components: { Header, Main },
+    components: { CommonHeader, HomeMain, CommonFooter },
 
     mounted() {
       this.setFillHeight();
