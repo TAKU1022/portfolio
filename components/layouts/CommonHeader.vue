@@ -7,16 +7,24 @@
     <nav class="l-header__nav">
       <ul class="l-header__list">
         <li>
-          <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#top' }" to class="l-header__link"
+            >Top</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">Attitude</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#attitude' }" to class="l-header__link"
+            >Attitude</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#products' }" to class="l-header__link"
+            >Products</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#skills' }" to class="l-header__link"
+            >skills</NuxtLink
+          >
         </li>
       </ul>
     </nav>
