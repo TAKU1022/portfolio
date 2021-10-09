@@ -1,34 +1,33 @@
 <template>
-  <section class="p-home-section p-home-section--products">
+  <section id="products" class="p-home-section p-home-section--products">
     <div class="wrapper">
       <h2 class="p-home-section__title">
         <span class="p-home-section__title-japanese">個人開発一覧</span>
         <span class="p-home-section__title-english">Products</span>
       </h2>
-      <div class="p-home-products">
-        <NuxtLink
-          v-for="product in productList"
-          :key="product.id"
-          to="/"
-          class="p-home-product"
-        >
-          <div class="p-home-product__container">
-            <picture>
-              <source
-                :srcset="require(`~/assets/images/${product.image.webp}`)"
-                type="image/webp"
-              />
-              <img
-                class="p-home-product__image"
-                :src="require(`~/assets/images/${product.image.png}`)"
-                loading="lazy"
-                alt=""
-              />
-            </picture>
-          </div>
-          <p class="p-home-product__name">{{ product.name }}</p>
-        </NuxtLink>
-      </div>
+      <ul class="p-home-products">
+        <li v-for="product in productList" :key="product.id">
+          <NuxtLink to="/">
+            <article class="p-home-product">
+              <div class="p-home-product__container">
+                <picture>
+                  <source
+                    :srcset="require(`~/assets/images/${product.image.webp}`)"
+                    type="image/webp"
+                  />
+                  <img
+                    class="p-home-product__image"
+                    :src="require(`~/assets/images/${product.image.png}`)"
+                    loading="lazy"
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <p class="p-home-product__name">{{ product.name }}</p>
+            </article>
+          </NuxtLink>
+        </li>
+      </ul>
     </div>
   </section>
 </template>

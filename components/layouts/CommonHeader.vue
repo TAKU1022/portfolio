@@ -7,16 +7,24 @@
     <nav class="l-header__nav">
       <ul class="l-header__list">
         <li>
-          <NuxtLink class="l-header__link" to="/#">Top</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#top' }" to class="l-header__link"
+            >Top</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">Attitude</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#attitude' }" to class="l-header__link"
+            >Attitude</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">Products</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#products' }" to class="l-header__link"
+            >Products</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="l-header__link" to="/#">skills</NuxtLink>
+          <NuxtLink v-scroll-to="{ el: '#skills' }" to class="l-header__link"
+            >skills</NuxtLink
+          >
         </li>
       </ul>
     </nav>
@@ -28,16 +36,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @keyframes slide-in-header {
-    0% {
-      transform: translateY(-100%);
-    }
-
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   .l-header {
     position: fixed;
     width: 100%;
@@ -47,7 +45,7 @@
     font-family: $fontLora;
     padding: 16px;
     z-index: 999;
-    will-change: transform;
+    transform: translateZ(0);
     @include responsive(md) {
       box-shadow: none;
       background-color: transparent;
