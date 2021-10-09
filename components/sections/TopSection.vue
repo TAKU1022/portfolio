@@ -1,5 +1,5 @@
 <template>
-  <section class="p-home-top">
+  <section id="top" class="p-home-top">
     <div>
       <h1 class="p-home-top__title">
         <span class="p-home-top__title-english">Uchida Takumi</span>
