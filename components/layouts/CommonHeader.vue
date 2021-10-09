@@ -51,77 +51,77 @@
       background-color: transparent;
       padding: 16px 32px;
     }
+  }
 
-    .l-header__logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      line-height: 1;
+  .l-header__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .l-header__logo-main {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    @include responsive(lg) {
+      font-size: 3.2rem;
     }
+  }
 
-    .l-header__logo-main {
-      font-size: 2.4rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-      @include responsive(lg) {
-        font-size: 3.2rem;
-      }
+  .l-header__logo-sub {
+    font-size: 1.2rem;
+    font-weight: 500;
+    @include responsive(lg) {
+      font-size: 1.4rem;
     }
+  }
 
-    .l-header__logo-sub {
-      font-size: 1.2rem;
-      font-weight: 500;
-      @include responsive(lg) {
-        font-size: 1.4rem;
-      }
+  .l-header__nav {
+    display: none;
+    @include responsive(md) {
+      display: block;
     }
+  }
 
-    .l-header__nav {
-      display: none;
-      @include responsive(md) {
-        display: block;
-      }
+  .l-header__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 3.2rem;
+    @include responsive(lg) {
+      gap: 7.2rem;
     }
+  }
 
-    .l-header__list {
-      display: grid;
-      grid-template-columns: repeat(4, auto);
-      gap: 3.2rem;
-      @include responsive(lg) {
-        gap: 7.2rem;
-      }
-    }
-
-    .l-header__link {
-      font-size: 2rem;
-      font-weight: bold;
-      padding: 8px;
-      position: relative;
-      @include hover {
-        &::after {
-          transform: scale(1, 1);
-        }
-      }
-      @include responsive(lg) {
-        font-size: 2.4rem;
-      }
-
+  .l-header__link {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 8px;
+    position: relative;
+    @include hover {
       &::after {
-        content: '';
-        display: block;
-        background-color: $primaryDark;
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        bottom: 4px;
-        transition: transform 0.3s;
-        transform-origin: left top;
-        transform: scale(0, 1);
-        will-change: transform;
-        @include responsive(lg) {
-          height: 3px;
-        }
+        transform: scale(1, 1);
+      }
+    }
+    @include responsive(lg) {
+      font-size: 2.4rem;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: $primaryDark;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: 4px;
+      transition: transform 0.3s;
+      transform-origin: left top;
+      transform: scale(0, 1);
+      will-change: transform;
+      @include responsive(lg) {
+        height: 3px;
       }
     }
   }

@@ -36,14 +36,14 @@
   .p-home-attitude {
     max-width: 800px;
     margin: 0 auto;
+  }
 
-    .p-home-attitude__list {
-      display: grid;
-      gap: 1.6rem;
-    }
+  .p-home-attitude__list {
+    display: grid;
+    gap: 1.6rem;
+  }
 
-    .p-home-attitude__list-item {
-      font-size: 1.6rem;
-    }
+  .p-home-attitude__list-item {
+    font-size: 1.6rem;
   }
 </style>

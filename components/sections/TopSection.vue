@@ -27,33 +27,33 @@
     align-items: center;
     padding: 16px;
     position: relative;
+  }
 
-    .p-home-top__title {
-      text-align: center;
-      font-weight: bold;
-      padding-bottom: 48px;
+  .p-home-top__title {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 48px;
+  }
+
+  .p-home-top__title-english {
+    font-family: $fontLora;
+    font-size: 4rem;
+    letter-spacing: 0.03em;
+    @include responsive(sm) {
+      font-size: 6rem;
     }
-
-    .p-home-top__title-english {
-      font-family: $fontLora;
-      font-size: 4rem;
-      letter-spacing: 0.03em;
-      @include responsive(sm) {
-        font-size: 6rem;
-      }
-      @include responsive(lg) {
-        font-size: 8rem;
-      }
+    @include responsive(lg) {
+      font-size: 8rem;
     }
+  }
 
-    .p-home-top__title-japanese {
-      font-size: 3.2rem;
-      @include responsive(sm) {
-        font-size: 5.2rem;
-      }
-      @include responsive(lg) {
-        font-size: 7.2rem;
-      }
+  .p-home-top__title-japanese {
+    font-size: 3.2rem;
+    @include responsive(sm) {
+      font-size: 5.2rem;
+    }
+    @include responsive(lg) {
+      font-size: 7.2rem;
     }
   }
 </style>
