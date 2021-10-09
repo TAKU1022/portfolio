@@ -28,16 +28,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @keyframes slide-in-header {
-    0% {
-      transform: translateY(-100%);
-    }
-
-    100% {
-      transform: translateY(0);
-    }
-  }
-
   .l-header {
     position: fixed;
     width: 100%;
@@ -47,7 +37,7 @@
     font-family: $fontLora;
     padding: 16px;
     z-index: 999;
-    will-change: transform;
+    transform: translateZ(0);
     @include responsive(md) {
       box-shadow: none;
       background-color: transparent;
