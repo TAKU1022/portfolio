@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink class="c-scroll-link" to="#">
+  <NuxtLink v-scroll-to="{ el: '#attitude' }" to class="c-scroll-link">
     <span class="c-scroll-link__text">scroll</span>
   </NuxtLink>
 </template>
@@ -9,6 +9,18 @@
 </script>
 
 <style lang="scss" scoped>
+  @keyframes move-arrow {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 25%);
+    }
+    100% {
+      transform: translateX(-50%, 0);
+    }
+  }
+
   .c-scroll-link {
     display: flex;
     align-items: center;
@@ -47,18 +59,6 @@
       font-family: $fontLora;
       font-size: 1.4rem;
       writing-mode: vertical-rl;
-    }
-  }
-
-  @keyframes move-arrow {
-    0% {
-      transform: translate(-50%, 0);
-    }
-    50% {
-      transform: translate(-50%, 25%);
-    }
-    100% {
-      transform: translateX(-50%, 0);
     }
   }
 </style>
