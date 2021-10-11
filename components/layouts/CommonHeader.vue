@@ -23,7 +23,7 @@
         </li>
         <li>
           <NuxtLink v-scroll-to="{ el: '#skills' }" to class="l-header__link"
-            >skills</NuxtLink
+            >Skills</NuxtLink
           >
         </li>
       </ul>
@@ -32,7 +32,26 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    computed: {
+      isOpened() {
+        return this.$store.state.drawer.isOpened;
+      },
+      scrollBarWidth() {
+        return window.innerWidth - document.body.clientWidth;
+      },
+    },
+
+    watch: {
+      isOpened() {
+        if (this.isOpened) {
+          this.$el.style.width = `calc(100% - ${this.scrollBarWidth}px)`;
+        } else {
+          this.$el.style.width = '';
+        }
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -116,6 +135,7 @@
       height: 2px;
       position: absolute;
       bottom: 4px;
+      left: 0;
       transition: transform 0.3s;
       transform-origin: left top;
       transform: scale(0, 1);
