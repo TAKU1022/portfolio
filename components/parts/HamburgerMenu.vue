@@ -2,8 +2,8 @@
   <button
     class="l-hamburger"
     type="button"
-    :aria-expanded="isOpened ? 'true' : 'false'"
-    @click="toggleDrawer($event)"
+    data-micromodal-trigger="drawer"
+    @click="openDrawer()"
   >
     <span class="l-hamburger__icon"></span>
   </button>
@@ -15,20 +15,36 @@
       isOpened() {
         return this.$store.state.drawer.isOpened;
       },
+      scrollBarWidth() {
+        return window.innerWidth - document.body.clientWidth;
+      },
+    },
+
+    watch: {
+      isOpened() {
+        if (this.isOpened) {
+          document.body.style.paddingRight = `${this.scrollBarWidth}px`;
+          this.$el.style.right = `calc(6.5vw + ${this.scrollBarWidth}px)`;
+        } else {
+          document.body.style.paddingRight = ``;
+          this.$el.style.right = '';
+        }
+      },
+    },
+
+    mounted() {
+      // eslint-disable-next-line no-undef
+      MicroModal.init({
+        disableScroll: true,
+        disableFocus: true,
+        awaitOpenAnimation: true,
+        awaitCloseAnimation: true,
+      });
     },
 
     methods: {
-      toggleDrawer(event) {
-        const trigger =
-          event.target.nodeName === 'BUTTON'
-            ? event.target
-            : event.target.parentElement;
-
-        if (trigger.ariaExpanded === 'false') {
-          this.$store.commit('drawer/openDrawer');
-        } else {
-          this.$store.commit('drawer/closeDrawer');
-        }
+      openDrawer() {
+        this.$store.commit('drawer/openDrawer');
       },
     },
   };
@@ -43,28 +59,10 @@
     position: fixed;
     right: 6.5vw;
     bottom: 6.5vw;
-    z-index: 999;
+    z-index: 777;
     transform: translateZ(0);
-    transition: 0.5s;
-    will-change: transform;
-
-    &[aria-expanded='true'] {
-      .l-hamburger__icon {
-        transform: translate(-50%, -50%) rotate(45deg);
-
-        &::before,
-        &::after {
-          top: 0;
-        }
-
-        &::before {
-          transform: rotate(90deg);
-        }
-
-        &::after {
-          opacity: 0;
-        }
-      }
+    @include responsive(md) {
+      display: none;
     }
   }
 
