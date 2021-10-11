@@ -1,6 +1,7 @@
 <template>
   <div>
     <CommonHeader />
+    <MenuDrawer />
     <HamburgerMenu />
     <HomeMain />
     <CommonFooter />
@@ -13,9 +14,16 @@
   import HomeMain from '~/components/layouts/HomeMain.vue';
   import CommonFooter from '~/components/layouts/CommonFooter.vue';
   import HamburgerMenu from '~/components/parts/HamburgerMenu.vue';
+  import MenuDrawer from '~/components/layouts/MenuDrawer.vue';
 
   export default {
-    components: { CommonHeader, HomeMain, CommonFooter, HamburgerMenu },
+    components: {
+      CommonHeader,
+      HomeMain,
+      CommonFooter,
+      HamburgerMenu,
+      MenuDrawer,
+    },
 
     mounted() {
       this.setFillHeight();
