@@ -54,11 +54,11 @@
     &::after {
       height: 50px;
     }
+  }
 
-    .c-scroll-link__text {
-      font-family: $fontLora;
-      font-size: 1.4rem;
-      writing-mode: vertical-rl;
-    }
+  .c-scroll-link__text {
+    font-family: $fontLora;
+    font-size: 1.4rem;
+    writing-mode: vertical-rl;
   }
 </style>

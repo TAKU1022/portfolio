@@ -171,54 +171,54 @@
     @include responsive(md) {
       gap: 80px;
     }
+  }
 
-    .p-home-skills__category-title {
-      display: flex;
-      justify-content: center;
-      font-size: 2.4rem;
-      margin-bottom: 24px;
-      @include responsive(md) {
-        font-size: 2.8rem;
-        margin-bottom: 32px;
-      }
+  .p-home-skills__category-title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.4rem;
+    margin-bottom: 24px;
+    @include responsive(md) {
+      font-size: 2.8rem;
+      margin-bottom: 32px;
     }
+  }
 
-    .p-home-skills__list {
-      display: grid;
-      gap: 24px;
-      @include responsive(sm) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @include responsive(lg) {
-        grid-template-columns: repeat(3, 1fr);
-      }
+  .p-home-skills__list {
+    display: grid;
+    gap: 24px;
+    @include responsive(sm) {
+      grid-template-columns: repeat(2, 1fr);
     }
+    @include responsive(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
-    .p-home-skills__list-item {
-      background-color: $primaryWhite;
-      border-radius: 10px;
-      padding: 24px;
-    }
+  .p-home-skills__list-item {
+    background-color: $primaryWhite;
+    border-radius: 10px;
+    padding: 24px;
+  }
 
-    .p-home-skills__icon {
-      display: block;
-      width: 100%;
-      height: 80px;
-      max-width: 80px;
-      margin: 0 auto 8px;
-    }
+  .p-home-skills__icon {
+    display: block;
+    width: 100%;
+    height: 80px;
+    max-width: 80px;
+    margin: 0 auto 8px;
+  }
 
-    .p-home-skills__name {
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
+  .p-home-skills__name {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
 
-    .p-home-skills__content {
-      display: flex;
-      justify-content: center;
-      font-size: 1.6rem;
-    }
+  .p-home-skills__content {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
   }
 </style>

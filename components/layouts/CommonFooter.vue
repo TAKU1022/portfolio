@@ -18,12 +18,12 @@
     @include responsive(md) {
       padding: 40px;
     }
+  }
 
-    .l-footer__corporate {
-      font-size: 12px;
-      @include responsive(md) {
-        font-size: 14px;
-      }
+  .l-footer__corporate {
+    font-size: 12px;
+    @include responsive(md) {
+      font-size: 14px;
     }
   }
 </style>

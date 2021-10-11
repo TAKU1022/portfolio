@@ -44,20 +44,20 @@
 <style lang="scss" scoped>
   .p-home-parallax {
     padding: 80px 0 40px;
+  }
 
-    .p-home-parallax__inner {
-      height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
+  .p-home-parallax__inner {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
 
-    .p-home-parallax__image {
-      width: 300%;
-      max-width: none;
-      display: block;
-      position: absolute;
-      top: -50%;
-      left: 0;
-    }
+  .p-home-parallax__image {
+    width: 300%;
+    max-width: none;
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: 0;
   }
 </style>
