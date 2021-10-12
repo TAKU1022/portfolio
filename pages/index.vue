@@ -10,6 +10,7 @@
 
 <script>
   import 'focus-visible';
+  import { gsap } from 'gsap';
   import CommonHeader from '~/components/layouts/CommonHeader.vue';
   import HomeMain from '~/components/layouts/HomeMain.vue';
   import CommonFooter from '~/components/layouts/CommonFooter.vue';
@@ -28,6 +29,7 @@
     mounted() {
       this.setFillHeight();
       this.fixViewPort();
+      this.fadeInText();
     },
 
     methods: {
@@ -59,6 +61,50 @@
         };
         window.addEventListener('resize', switchViewport);
         switchViewport();
+      },
+      getWrappedSapnText(target) {
+        const nodes = [...target.childNodes];
+        let returnText = '';
+        nodes.forEach((node) => {
+          if (node.nodeType === 3) {
+            const text = node.textContent.replace(/\r?\n/g, '');
+            const splitText = text.split('');
+            splitText.forEach((char) => {
+              returnText = returnText + `<span>${char}</span>`;
+            });
+          } else {
+            returnText = returnText + node.outerHTML;
+          }
+        });
+        return returnText;
+      },
+      fadeInText() {
+        const targetArray = [
+          ...document.querySelectorAll('[data-animation="continuity"]'),
+        ];
+        targetArray.forEach((target) => {
+          target.innerHTML = this.getWrappedSapnText(target);
+          target.spans = target.querySelectorAll('span');
+          const observer = new IntersectionObserver(this.doWhenIntersect, {
+            rootMargin: '0px',
+          });
+          observer.observe(target);
+        });
+      },
+      doWhenIntersect(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('data-observe', '');
+            const timeLine = gsap.timeline();
+            timeLine.from(entry.target.spans, {
+              y: '10%',
+              opacity: 0,
+              duration: 0.6,
+              stagger: 0.04,
+            });
+            observer.unobserve(entry.target);
+          }
+        });
       },
     },
   };
