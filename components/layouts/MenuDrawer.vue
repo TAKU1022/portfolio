@@ -1,7 +1,12 @@
 <template>
   <div id="drawer" class="l-drawer" aria-hidden="true">
     <div class="l-drawer__overlay" tabindex="-1" data-micromodal-close>
-      <div class="l-drawer__container" role="dialog" aria-modal="true">
+      <div
+        ref="container"
+        class="l-drawer__container"
+        role="dialog"
+        aria-modal="true"
+      >
         <nav>
           <ul>
             <li>
@@ -9,10 +14,8 @@
                 v-scroll-to="{ el: '#top' }"
                 to
                 class="l-drawer__link"
-                data-micromodal-close
-                ><span class="l-drawer__link-text" data-micromodal-close
-                  >Top</span
-                ></NuxtLink
+                @click.native="closeDrawer()"
+                ><span class="l-drawer__link-text">Top</span></NuxtLink
               >
             </li>
             <li>
@@ -20,10 +23,8 @@
                 v-scroll-to="{ el: '#attitude' }"
                 to
                 class="l-drawer__link"
-                data-micromodal-close
-                ><span class="l-drawer__link-text" data-micromodal-close
-                  >Attitude</span
-                ></NuxtLink
+                @click.native="closeDrawer()"
+                ><span class="l-drawer__link-text">Attitude</span></NuxtLink
               >
             </li>
             <li>
@@ -31,10 +32,8 @@
                 v-scroll-to="{ el: '#products' }"
                 to
                 class="l-drawer__link"
-                data-micromodal-close
-                ><span class="l-drawer__link-text" data-micromodal-close
-                  >Products</span
-                ></NuxtLink
+                @click.native="closeDrawer()"
+                ><span class="l-drawer__link-text">Products</span></NuxtLink
               >
             </li>
             <li>
@@ -42,10 +41,8 @@
                 v-scroll-to="{ el: '#skills' }"
                 to
                 class="l-drawer__link"
-                data-micromodal-close
-                ><span class="l-drawer__link-text" data-micromodal-close
-                  >Skills</span
-                ></NuxtLink
+                @click.native="closeDrawer()"
+                ><span class="l-drawer__link-text">Skills</span></NuxtLink
               >
             </li>
           </ul>
@@ -76,10 +73,12 @@
     watch: {
       isOpened() {
         if (this.isOpened) {
+          this.$refs.container.style.paddingLeft = '';
           this.$refs[
             'close-button'
           ].style.right = `calc(6.5vw + ${this.scrollBarWidth}px)`;
         } else {
+          this.$refs.container.style.paddingLeft = `calc(24px + ${this.scrollBarWidth}px)`;
           this.$refs['close-button'].style.right = '';
         }
       },
@@ -99,6 +98,10 @@
             this.$store.commit('drawer/closeDrawer');
           }
         });
+      },
+      closeDrawer() {
+        // eslint-disable-next-line no-undef
+        MicroModal.close('drawer');
       },
     },
   };
