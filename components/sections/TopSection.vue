@@ -2,9 +2,13 @@
   <section id="top" class="p-home-top">
     <div>
       <h1 class="p-home-top__title">
-        <span class="p-home-top__title-english">Uchida Takumi</span>
+        <span class="p-home-top__title-english" data-animation="continuity"
+          >Uchida&nbsp;Takumi</span
+        >
         <br />
-        <span class="p-home-top__title-japanese">のポートフォリオ</span>
+        <span class="p-home-top__title-japanese" data-animation="continuity"
+          >のポートフォリオ</span
+        >
       </h1>
       <ScrollLink />
     </div>

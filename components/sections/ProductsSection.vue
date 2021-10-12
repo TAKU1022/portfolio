@@ -2,8 +2,12 @@
   <section id="products" class="p-home-section p-home-section--products">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">個人開発一覧</span>
-        <span class="p-home-section__title-english">Products</span>
+        <span class="p-home-section__title-japanese" data-animation="continuity"
+          >個人開発一覧</span
+        >
+        <span class="p-home-section__title-english" data-animation="continuity"
+          >Products</span
+        >
       </h2>
       <ul class="p-home-products">
         <li v-for="product in productList" :key="product.id">
@@ -102,6 +106,8 @@
   }
 
   .p-home-product__name {
+    display: flex;
+    justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
     padding: 0 24px;

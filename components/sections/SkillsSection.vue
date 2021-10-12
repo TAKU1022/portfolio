@@ -2,8 +2,12 @@
   <section id="skills" class="p-home-section p-home-section--skills">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">スキル一覧</span>
-        <span class="p-home-section__title-english">Skills</span>
+        <span class="p-home-section__title-japanese" data-animation="continuity"
+          >スキル一覧</span
+        >
+        <span class="p-home-section__title-english" data-animation="continuity"
+          >Skills</span
+        >
       </h2>
       <ul class="p-home-skills">
         <li v-for="skill in skillList" :key="skill.category">
@@ -82,7 +86,7 @@
                 icon: 'icon-sass.svg',
                 name: 'Sass',
                 content:
-                  'SCSS記法でコーディングを進めます。CSSの詳細度を考慮したネスト記法を心がけています。',
+                  'SCSS記法でコーディングを進めます。積極的にDartSassを導入して開発を進めています。',
               },
             ],
           },

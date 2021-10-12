@@ -2,8 +2,12 @@
   <section id="attitude" class="p-home-section">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">心構え</span>
-        <span class="p-home-section__title-english">Attitude</span>
+        <span class="p-home-section__title-japanese" data-animation="continuity"
+          >心構え</span
+        >
+        <span class="p-home-section__title-english" data-animation="continuity"
+          >Attitude</span
+        >
       </h2>
       <div class="p-home-attitude">
         <ul class="p-home-attitude__list">
