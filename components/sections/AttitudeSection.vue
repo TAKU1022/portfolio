@@ -2,10 +2,10 @@
   <section id="attitude" class="p-home-section">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese" data-animation="continuity"
+        <span class="p-home-section__title-japanese js-continuity-fade-in"
           >心構え</span
         >
-        <span class="p-home-section__title-english" data-animation="continuity"
+        <span class="p-home-section__title-english js-continuity-fade-in"
           >Attitude</span
         >
       </h2>

@@ -10,7 +10,6 @@
 
 <script>
   import 'focus-visible';
-  import { gsap } from 'gsap';
   import CommonHeader from '~/components/layouts/CommonHeader.vue';
   import HomeMain from '~/components/layouts/HomeMain.vue';
   import CommonFooter from '~/components/layouts/CommonFooter.vue';
@@ -80,33 +79,23 @@
       },
       fadeInTitle() {
         const targetArray = [
-          ...document.querySelectorAll('[data-animation="continuity"]'),
+          ...document.querySelectorAll('.js-continuity-fade-in'),
         ];
         targetArray.forEach((target) => {
           target.innerHTML = this.getWrappedSapnText(target);
           target.spans = target.querySelectorAll('span');
           const observer = new IntersectionObserver(
             this.callbackTitleObserver,
-            {
-              rootMargin: '0px 0px 50px',
-            }
+            { rootMargin: '0px 0px -50px' }
           );
+          target.setAttribute('data-animated', 'false');
           observer.observe(target);
         });
       },
       callbackTitleObserver(entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.setAttribute('data-observe', '');
-            const timeLine = gsap.timeline();
-            timeLine
-              .from(entry.target, { opacity: 0, duration: 0.1 })
-              .from(entry.target.spans, {
-                y: '10%',
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.04,
-              });
+            entry.target.setAttribute('data-animated', 'true');
             observer.unobserve(entry.target);
           }
         });
