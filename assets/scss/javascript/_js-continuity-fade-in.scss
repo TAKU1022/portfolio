@@ -1,6 +1,6 @@
 .js-continuity-fade-in span {
   transition: 0.8s;
-  will-change: transform, opacity;
+  will-change: opacity, transform;
 
   @for $index from 2 through 13 {
     &:nth-child(#{$index}) {
