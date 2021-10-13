@@ -11,7 +11,9 @@
       </h2>
       <ul class="p-home-skills">
         <li v-for="skill in skillList" :key="skill.category">
-          <h3 class="p-home-skills__category-title">{{ skill.category }}</h3>
+          <h3 class="p-home-skills__category-title js-fade-in">
+            {{ skill.category }}
+          </h3>
           <ul class="p-home-skills__list">
             <li
               v-for="technology in skill.technologyList"
