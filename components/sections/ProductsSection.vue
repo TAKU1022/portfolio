@@ -10,7 +10,11 @@
         >
       </h2>
       <ul class="p-home-products">
-        <li v-for="product in productList" :key="product.id" class="js-fade-in">
+        <li
+          v-for="product in productList"
+          :key="product.name"
+          class="js-fade-in"
+        >
           <NuxtLink to="/">
             <article class="p-home-product">
               <div class="p-home-product__container">
@@ -28,6 +32,11 @@
                 </picture>
               </div>
               <p class="p-home-product__name">{{ product.name }}</p>
+              <p class="p-home-product__technology">
+                <span class="p-home-product__technology-heading"
+                  >【使用技術】</span
+                ><span>{{ product.technology }}</span>
+              </p>
             </article>
           </NuxtLink>
         </li>
@@ -42,20 +51,21 @@
       return {
         productList: [
           {
-            id: 'menu-suggestion',
             image: {
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
             },
             name: 'こんだての森（献立提案アプリ）',
+            technology:
+              'TypeScirpt, Angular, AngularMaterial, Firebase(Authentication, Firestore, Storage, Functions), Algolia',
           },
           {
-            id: 'portfolio',
             image: {
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
             },
             name: 'ポートフォリオ（当サイト）',
+            technology: 'JavaScript, Vue.js(Nuxt.js), Netlify, micromodal.js',
           },
         ],
       };
@@ -110,6 +120,24 @@
     justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
-    padding: 0 24px;
+    margin-bottom: 8px;
+    @include responsive(lg) {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  .p-home-product__technology {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    padding: 0 8px;
+    @include responsive(lg) {
+      flex-direction: row;
+    }
+  }
+
+  .p-home-product__technology-heading {
+    flex-shrink: 0;
   }
 </style>
