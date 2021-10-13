@@ -11,20 +11,12 @@
       </h2>
       <div class="p-home-attitude">
         <ul class="p-home-attitude__list">
-          <li class="p-home-attitude__list-item">
-            メンテナンス性を考慮したHTML/CSSコーディングを行います。
-          </li>
-          <li class="p-home-attitude__list-item">
-            ユーザビリティ、アクセシビリティに配慮したコーディングを行います。
-          </li>
-          <li class="p-home-attitude__list-item">
-            パフォーマンスの向上を常に意識して開発を進めます。
-          </li>
-          <li class="p-home-attitude__list-item">
-            使いやすい管理画面を意識したWordPressテーマ作成（CMS構築）を行います。
-          </li>
-          <li class="p-home-attitude__list-item">
-            短納期の案件にも、少しでもより良い品質に向けて妥協せず開発を行います。
+          <li
+            v-for="attitude in attitudeList"
+            :key="attitude"
+            class="p-home-attitude__list-item"
+          >
+            {{ attitude }}
           </li>
         </ul>
       </div>
@@ -33,7 +25,19 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    data() {
+      return {
+        attitudeList: [
+          'メンテナンス性を考慮したHTML/CSSコーディングを行います。',
+          'ユーザビリティ、アクセシビリティに配慮したコーディングを行います。',
+          'パフォーマンスの向上を常に意識して開発を進めます。',
+          '使いやすい管理画面を意識したWordPressテーマ作成（CMS構築）を行います。',
+          '短納期の案件にも、少しでもより良い品質に向けて妥協せず開発を行います。',
+        ],
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
