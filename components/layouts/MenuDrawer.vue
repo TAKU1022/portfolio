@@ -7,6 +7,13 @@
         role="dialog"
         aria-modal="true"
       >
+        <button
+          ref="close-button"
+          class="l-drawer__close-button"
+          type="button"
+          data-micromodal-close
+        ></button>
+
         <nav>
           <ul>
             <li>
@@ -49,13 +56,6 @@
         </nav>
       </div>
     </div>
-
-    <button
-      ref="close-button"
-      class="l-drawer__close-button"
-      type="button"
-      data-micromodal-close
-    ></button>
   </div>
 </template>
 
