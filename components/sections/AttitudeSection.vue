@@ -14,7 +14,7 @@
           <li
             v-for="attitude in attitudeList"
             :key="attitude"
-            class="p-home-attitude__list-item"
+            class="p-home-attitude__list-item js-fade-in"
           >
             {{ attitude }}
           </li>

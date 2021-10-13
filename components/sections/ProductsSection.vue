@@ -10,7 +10,7 @@
         >
       </h2>
       <ul class="p-home-products">
-        <li v-for="product in productList" :key="product.id">
+        <li v-for="product in productList" :key="product.id" class="js-fade-in">
           <NuxtLink to="/">
             <article class="p-home-product">
               <div class="p-home-product__container">

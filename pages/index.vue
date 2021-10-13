@@ -29,6 +29,7 @@
       this.setFillHeight();
       this.fixViewPort();
       this.fadeInTitle();
+      this.fadeInContent();
     },
 
     methods: {
@@ -86,13 +87,32 @@
           target.spans = target.querySelectorAll('span');
           const observer = new IntersectionObserver(
             this.callbackTitleObserver,
-            { rootMargin: '0px 0px -50px' }
+            { rootMargin: '0px 0px -20%' }
           );
           target.setAttribute('data-animated', 'false');
           observer.observe(target);
         });
       },
       callbackTitleObserver(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('data-animated', 'true');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      fadeInContent() {
+        const targetArray = [...document.querySelectorAll('.js-fade-in')];
+        targetArray.forEach((target) => {
+          const observer = new IntersectionObserver(
+            this.callbackContentObserver,
+            { rootMargin: '0px 0px -20%' }
+          );
+          target.setAttribute('data-animated', 'false');
+          observer.observe(target);
+        });
+      },
+      callbackContentObserver(entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.setAttribute('data-animated', 'true');

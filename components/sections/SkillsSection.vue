@@ -16,7 +16,7 @@
             <li
               v-for="technology in skill.technologyList"
               :key="technology.name"
-              class="p-home-skills__list-item"
+              class="p-home-skills__list-item js-fade-in"
             >
               <img
                 class="p-home-skills__icon"
