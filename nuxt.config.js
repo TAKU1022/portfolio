@@ -1,5 +1,3 @@
-import Sass from 'sass';
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -41,13 +39,7 @@ export default {
   modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    loaders: {
-      scss: {
-        implementation: Sass,
-      },
-    },
-  },
+  build: {},
 
   styleResources: {
     scss: [
