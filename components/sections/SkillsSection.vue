@@ -118,7 +118,7 @@
               {
                 icon: 'icon-vue.svg',
                 name: 'Vue.js',
-                content: '当サイトはNuxt.jsで用いて開発しました。',
+                content: '当サイトをNuxt.jsで用いて開発しました。',
               },
             ],
           },
@@ -135,7 +135,7 @@
                 icon: 'icon-wordpress.svg',
                 name: 'WordPress',
                 content:
-                  'テーマの作成から、Advanced Custom Fieldsを用いたCMS構築、記事のタグの絞り込みや検索など、基本的なカスタマイズをしたコーポレートサイトの開発経験があります。',
+                  'テーマの作成から、Advanced Custom Fieldsを用いたCMS構築、記事のタグやカテゴリーの絞り込みや検索など、基本的なカスタマイズをしたコーポレートサイトの開発経験があります。',
               },
             ],
           },
@@ -190,12 +190,15 @@
 
   .p-home-skills__list {
     display: grid;
-    gap: 24px;
+    gap: 16px;
     @include responsive(sm) {
       grid-template-columns: repeat(2, 1fr);
     }
     @include responsive(lg) {
       grid-template-columns: repeat(3, 1fr);
+    }
+    @include responsive(xl) {
+      gap: 24px;
     }
   }
 
