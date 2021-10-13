@@ -2,17 +2,23 @@
   <section id="skills" class="p-home-section p-home-section--skills">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">スキル一覧</span>
-        <span class="p-home-section__title-english">Skills</span>
+        <span class="p-home-section__title-japanese js-continuity-fade-in"
+          >スキル一覧</span
+        >
+        <span class="p-home-section__title-english js-continuity-fade-in"
+          >Skills</span
+        >
       </h2>
       <ul class="p-home-skills">
         <li v-for="skill in skillList" :key="skill.category">
-          <h3 class="p-home-skills__category-title">{{ skill.category }}</h3>
+          <h3 class="p-home-skills__category-title js-fade-in">
+            {{ skill.category }}
+          </h3>
           <ul class="p-home-skills__list">
             <li
               v-for="technology in skill.technologyList"
               :key="technology.name"
-              class="p-home-skills__list-item"
+              class="p-home-skills__list-item js-fade-in"
             >
               <img
                 class="p-home-skills__icon"
@@ -82,7 +88,7 @@
                 icon: 'icon-sass.svg',
                 name: 'Sass',
                 content:
-                  'SCSS記法でコーディングを進めます。CSSの詳細度を考慮したネスト記法を心がけています。',
+                  'SCSS記法でコーディングを進めます。積極的にDartSassを導入して開発を進めています。',
               },
             ],
           },
@@ -114,7 +120,7 @@
               {
                 icon: 'icon-vue.svg',
                 name: 'Vue.js',
-                content: '当サイトはNuxt.jsで用いて開発しました。',
+                content: '当サイトをNuxt.jsで用いて開発しました。',
               },
             ],
           },
@@ -131,7 +137,7 @@
                 icon: 'icon-wordpress.svg',
                 name: 'WordPress',
                 content:
-                  'テーマの作成から、Advanced Custom Fieldsを用いたCMS構築、記事のタグの絞り込みや検索など、基本的なカスタマイズをしたコーポレートサイトの開発経験があります。',
+                  'テーマの作成から、Advanced Custom Fieldsを用いたCMS構築、記事のタグやカテゴリーの絞り込みや検索など、基本的なカスタマイズをしたコーポレートサイトの開発経験があります。',
               },
             ],
           },
@@ -186,12 +192,15 @@
 
   .p-home-skills__list {
     display: grid;
-    gap: 24px;
+    gap: 16px;
     @include responsive(sm) {
       grid-template-columns: repeat(2, 1fr);
     }
     @include responsive(lg) {
       grid-template-columns: repeat(3, 1fr);
+    }
+    @include responsive(xl) {
+      gap: 24px;
     }
   }
 

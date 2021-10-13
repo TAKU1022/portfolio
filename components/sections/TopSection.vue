@@ -2,9 +2,13 @@
   <section id="top" class="p-home-top">
     <div>
       <h1 class="p-home-top__title">
-        <span class="p-home-top__title-english">Uchida Takumi</span>
+        <span class="p-home-top__title-english js-continuity-fade-in"
+          >Uchida&nbsp;Takumi</span
+        >
         <br />
-        <span class="p-home-top__title-japanese">のポートフォリオ</span>
+        <span class="p-home-top__title-japanese js-continuity-fade-in"
+          >のポートフォリオ</span
+        >
       </h1>
       <ScrollLink />
     </div>
@@ -55,5 +59,10 @@
     @include responsive(lg) {
       font-size: 7.2rem;
     }
+  }
+
+  .p-home-top__title-english span,
+  .p-home-top__title-japanese span {
+    will-change: transform, opacity;
   }
 </style>

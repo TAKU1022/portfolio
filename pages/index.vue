@@ -27,6 +27,9 @@
 
     mounted() {
       this.setFillHeight();
+      this.fixViewPort();
+      this.fadeInTitle();
+      this.fadeInContent();
     },
 
     methods: {
@@ -36,17 +39,86 @@
       },
       setFillHeight() {
         let vw = window.innerWidth;
-
         window.addEventListener('resize', () => {
           if (vw === window.innerWidth) {
             return;
           }
-
           vw = window.innerWidth;
           this.getFillHeight();
         });
-
         this.getFillHeight();
+      },
+      fixViewPort() {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        const switchViewport = () => {
+          const value =
+            window.outerWidth > 360
+              ? 'width=device-width,initial-scale=1'
+              : 'width=360';
+          if (viewport.getAttribute('content') !== value) {
+            viewport.setAttribute('content', value);
+          }
+        };
+        window.addEventListener('resize', switchViewport);
+        switchViewport();
+      },
+      getWrappedSapnText(target) {
+        const nodes = [...target.childNodes];
+        let returnText = '';
+        nodes.forEach((node) => {
+          if (node.nodeType === 3) {
+            const text = node.textContent.replace(/\r?\n/g, '');
+            const splitText = text.split('');
+            splitText.forEach((char) => {
+              returnText = returnText + `<span>${char}</span>`;
+            });
+          } else {
+            returnText = returnText + node.outerHTML;
+          }
+        });
+        return returnText;
+      },
+      fadeInTitle() {
+        const targetArray = [
+          ...document.querySelectorAll('.js-continuity-fade-in'),
+        ];
+        targetArray.forEach((target) => {
+          target.innerHTML = this.getWrappedSapnText(target);
+          target.spans = target.querySelectorAll('span');
+          const observer = new IntersectionObserver(
+            this.callbackTitleObserver,
+            { rootMargin: '0px 0px -20%' }
+          );
+          target.setAttribute('data-animated', 'false');
+          observer.observe(target);
+        });
+      },
+      callbackTitleObserver(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('data-animated', 'true');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      fadeInContent() {
+        const targetArray = [...document.querySelectorAll('.js-fade-in')];
+        targetArray.forEach((target) => {
+          const observer = new IntersectionObserver(
+            this.callbackContentObserver,
+            { rootMargin: '0px 0px -20%' }
+          );
+          target.setAttribute('data-animated', 'false');
+          observer.observe(target);
+        });
+      },
+      callbackContentObserver(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('data-animated', 'true');
+            observer.unobserve(entry.target);
+          }
+        });
       },
     },
   };

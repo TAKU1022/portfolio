@@ -2,25 +2,21 @@
   <section id="attitude" class="p-home-section">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">心構え</span>
-        <span class="p-home-section__title-english">Attitude</span>
+        <span class="p-home-section__title-japanese js-continuity-fade-in"
+          >心構え</span
+        >
+        <span class="p-home-section__title-english js-continuity-fade-in"
+          >Attitude</span
+        >
       </h2>
       <div class="p-home-attitude">
         <ul class="p-home-attitude__list">
-          <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-          </li>
-          <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-          </li>
-          <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-          </li>
-          <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
-          </li>
-          <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+          <li
+            v-for="attitude in attitudeList"
+            :key="attitude"
+            class="p-home-attitude__list-item js-fade-in"
+          >
+            {{ attitude }}
           </li>
         </ul>
       </div>
@@ -29,21 +25,38 @@
 </template>
 
 <script>
-  export default {};
+  export default {
+    data() {
+      return {
+        attitudeList: [
+          'メンテナンス性を考慮したHTML/CSSコーディングを行います。',
+          'ユーザビリティ、アクセシビリティに配慮したコーディングを行います。',
+          'パフォーマンスの向上を常に意識して開発を進めます。',
+          '使いやすい管理画面を意識したWordPressテーマ作成（CMS構築）を行います。',
+          '短納期の案件にも、少しでもより良い品質に向けて妥協せず開発を行います。',
+        ],
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
   .p-home-attitude {
-    max-width: 800px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
   .p-home-attitude__list {
     display: grid;
-    gap: 1.6rem;
+    gap: 3.2rem;
   }
 
   .p-home-attitude__list-item {
-    font-size: 1.6rem;
+    display: flex;
+    font-size: 1.8rem;
+
+    &::before {
+      content: '・';
+    }
   }
 </style>

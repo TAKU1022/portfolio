@@ -1,0 +1,14 @@
+.js-fade-in {
+  transition: 0.8s;
+  will-change: opacity, transform;
+}
+
+.js-fade-in[data-animated='false'] {
+  opacity: 0;
+  transform: translateY(30%);
+}
+
+.js-fade-in[data-animated='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}

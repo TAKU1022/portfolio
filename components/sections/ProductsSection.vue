@@ -2,12 +2,20 @@
   <section id="products" class="p-home-section p-home-section--products">
     <div class="wrapper">
       <h2 class="p-home-section__title">
-        <span class="p-home-section__title-japanese">個人開発一覧</span>
-        <span class="p-home-section__title-english">Products</span>
+        <span class="p-home-section__title-japanese js-continuity-fade-in"
+          >個人開発一覧</span
+        >
+        <span class="p-home-section__title-english js-continuity-fade-in"
+          >Products</span
+        >
       </h2>
       <ul class="p-home-products">
-        <li v-for="product in productList" :key="product.id">
-          <NuxtLink to="/">
+        <li
+          v-for="product in productList"
+          :key="product.name"
+          class="js-fade-in"
+        >
+          <a :href="product.url" target="_blank" rel="noopener noreferrer">
             <article class="p-home-product">
               <div class="p-home-product__container">
                 <picture>
@@ -24,8 +32,13 @@
                 </picture>
               </div>
               <p class="p-home-product__name">{{ product.name }}</p>
+              <p class="p-home-product__technology">
+                <span class="p-home-product__technology-heading"
+                  >【使用技術】</span
+                ><span>{{ product.technology }}</span>
+              </p>
             </article>
-          </NuxtLink>
+          </a>
         </li>
       </ul>
     </div>
@@ -38,20 +51,23 @@
       return {
         productList: [
           {
-            id: 'menu-suggestion',
+            url: 'https://github.com/TAKU1022/menu-forest',
             image: {
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
             },
             name: 'こんだての森（献立提案アプリ）',
+            technology:
+              'TypeScirpt, Angular, AngularMaterial, Firebase(Authentication, Firestore, Storage, Functions), Algolia',
           },
           {
-            id: 'portfolio',
+            url: 'https://github.com/TAKU1022/portfolio',
             image: {
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
             },
             name: 'ポートフォリオ（当サイト）',
+            technology: 'JavaScript, Vue.js(Nuxt.js), Netlify, micromodal.js',
           },
         ],
       };
@@ -102,8 +118,28 @@
   }
 
   .p-home-product__name {
+    display: flex;
+    justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
-    padding: 0 24px;
+    margin-bottom: 8px;
+    @include responsive(lg) {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  .p-home-product__technology {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    padding: 0 8px;
+    @include responsive(lg) {
+      flex-direction: row;
+    }
+  }
+
+  .p-home-product__technology-heading {
+    flex-shrink: 0;
   }
 </style>
