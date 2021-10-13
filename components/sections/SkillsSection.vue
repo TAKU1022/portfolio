@@ -212,10 +212,13 @@
 
   .p-home-skills__icon {
     display: block;
-    width: 100%;
-    height: 80px;
-    max-width: 80px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto 8px;
+    @include responsive(lg) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   .p-home-skills__name {
