@@ -3,6 +3,7 @@
     class="l-hamburger"
     type="button"
     data-micromodal-trigger="drawer"
+    aria-label="メニューを開く"
     @click="openDrawer()"
   >
     <span class="l-hamburger__icon"></span>

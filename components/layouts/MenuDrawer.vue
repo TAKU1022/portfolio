@@ -11,6 +11,7 @@
           ref="close-button"
           class="l-drawer__close-button"
           type="button"
+          aria-label="メニューを閉じる"
           data-micromodal-close
         ></button>
 
