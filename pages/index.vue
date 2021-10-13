@@ -29,7 +29,7 @@
     mounted() {
       this.setFillHeight();
       this.fixViewPort();
-      this.fadeInText();
+      this.fadeInTitle();
     },
 
     methods: {
@@ -78,20 +78,23 @@
         });
         return returnText;
       },
-      fadeInText() {
+      fadeInTitle() {
         const targetArray = [
           ...document.querySelectorAll('[data-animation="continuity"]'),
         ];
         targetArray.forEach((target) => {
           target.innerHTML = this.getWrappedSapnText(target);
           target.spans = target.querySelectorAll('span');
-          const observer = new IntersectionObserver(this.doWhenIntersect, {
-            rootMargin: '0px 0px 50px',
-          });
+          const observer = new IntersectionObserver(
+            this.callbackTitleObserver,
+            {
+              rootMargin: '0px 0px 50px',
+            }
+          );
           observer.observe(target);
         });
       },
-      doWhenIntersect(entries, observer) {
+      callbackTitleObserver(entries, observer) {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.setAttribute('data-observe', '');
