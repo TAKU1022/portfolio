@@ -15,7 +15,7 @@
           :key="product.name"
           class="js-fade-in"
         >
-          <NuxtLink to="/">
+          <a :href="product.url" target="_blank" rel="noopener noreferrer">
             <article class="p-home-product">
               <div class="p-home-product__container">
                 <picture>
@@ -38,7 +38,7 @@
                 ><span>{{ product.technology }}</span>
               </p>
             </article>
-          </NuxtLink>
+          </a>
         </li>
       </ul>
     </div>
@@ -51,6 +51,7 @@
       return {
         productList: [
           {
+            url: 'https://github.com/TAKU1022/menu-forest',
             image: {
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
@@ -60,6 +61,7 @@
               'TypeScirpt, Angular, AngularMaterial, Firebase(Authentication, Firestore, Storage, Functions), Algolia',
           },
           {
+            url: 'https://github.com/TAKU1022/portfolio',
             image: {
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
