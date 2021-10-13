@@ -86,7 +86,7 @@
           target.innerHTML = this.getWrappedSapnText(target);
           target.spans = target.querySelectorAll('span');
           const observer = new IntersectionObserver(this.doWhenIntersect, {
-            rootMargin: '0px',
+            rootMargin: '0px 0px 50px',
           });
           observer.observe(target);
         });
@@ -96,12 +96,14 @@
           if (entry.isIntersecting) {
             entry.target.setAttribute('data-observe', '');
             const timeLine = gsap.timeline();
-            timeLine.from(entry.target.spans, {
-              y: '10%',
-              opacity: 0,
-              duration: 0.6,
-              stagger: 0.04,
-            });
+            timeLine
+              .from(entry.target, { opacity: 0, duration: 0.1 })
+              .from(entry.target.spans, {
+                y: '10%',
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.04,
+              });
             observer.unobserve(entry.target);
           }
         });
