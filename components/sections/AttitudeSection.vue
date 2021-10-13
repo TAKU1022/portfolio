@@ -12,19 +12,19 @@
       <div class="p-home-attitude">
         <ul class="p-home-attitude__list">
           <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+            メンテナンス性を考慮したHTML/CSSコーディングを行います。
           </li>
           <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+            ユーザビリティ、アクセシビリティに配慮したコーディングを行います。
           </li>
           <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+            パフォーマンスの向上を常に意識して開発を進めます。
           </li>
           <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+            使いやすい管理画面を意識したWordPressテーマ作成（CMS構築）を行います。
           </li>
           <li class="p-home-attitude__list-item">
-            ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト
+            短納期の案件にも、少しでもより良い品質に向けて妥協せず開発を行います。
           </li>
         </ul>
       </div>
@@ -38,16 +38,21 @@
 
 <style lang="scss" scoped>
   .p-home-attitude {
-    max-width: 800px;
+    max-width: 680px;
     margin: 0 auto;
   }
 
   .p-home-attitude__list {
     display: grid;
-    gap: 1.6rem;
+    gap: 3.2rem;
   }
 
   .p-home-attitude__list-item {
-    font-size: 1.6rem;
+    display: flex;
+    font-size: 1.8rem;
+
+    &::before {
+      content: '・';
+    }
   }
 </style>
