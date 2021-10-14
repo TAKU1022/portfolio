@@ -1,5 +1,5 @@
 .js-fade-in {
-  transition: 0.8s;
+  transition: opacity 0.8s, transform 0.8s;
   will-change: opacity, transform;
 }
 
