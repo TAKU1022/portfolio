@@ -57,7 +57,7 @@
   }
 
   .c-scroll-link__text {
-    font-family: $fontLora;
+    font-family: 'googleLora', serif;
     font-size: 1.4rem;
     writing-mode: vertical-rl;
   }

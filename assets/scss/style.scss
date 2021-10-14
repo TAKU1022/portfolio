@@ -3,3 +3,11 @@
 @import './projects/p-home-section';
 @import './javascript/js-continuity-fade-in';
 @import './javascript/js-fade-in';
+
+@font-face {
+  font-family: googleLora;
+  src: url('../fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

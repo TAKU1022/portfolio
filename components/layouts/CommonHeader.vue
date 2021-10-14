@@ -61,7 +61,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $fontLora;
+    font-family: 'googleLora', serif;
     padding: 16px;
     z-index: 999;
     transform: translateZ(0);

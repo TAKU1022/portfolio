@@ -176,7 +176,7 @@
   .l-drawer__link {
     display: flex;
     justify-content: center;
-    font-family: $fontLora;
+    font-family: 'googleLora', serif;
     font-size: 2.8rem;
     font-weight: bold;
     padding: 16px 0;

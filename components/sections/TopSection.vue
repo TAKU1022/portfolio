@@ -40,7 +40,7 @@
   }
 
   .p-home-top__title-english {
-    font-family: $fontLora;
+    font-family: 'googleLora', serif;
     font-size: 4rem;
     letter-spacing: 0.03em;
     @include responsive(sm) {
