@@ -15,6 +15,7 @@
     "focus-visible": "^5.2.0",
     "micromodal": "^0.4.6",
     "nuxt": "^2.15.7",
+    "nuxt-lazy-load": "^1.2.7",
     "nuxt-webfontloader": "^1.1.0",
     "vue-scrollto": "^2.20.0"
   },

@@ -40,7 +40,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/style-resources', 'nuxt-webfontloader', 'nuxt-lazy-load'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
