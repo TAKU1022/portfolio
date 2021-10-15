@@ -16,19 +16,14 @@
       isOpened() {
         return this.$store.state.drawer.isOpened;
       },
-      scrollBarWidth() {
-        return window.innerWidth - document.body.clientWidth;
-      },
     },
 
     watch: {
       isOpened() {
         if (this.isOpened) {
-          document.body.style.paddingRight = `${this.scrollBarWidth}px`;
-          this.$el.style.right = `calc(6.5vw + ${this.scrollBarWidth}px)`;
+          this.fixBackface(true);
         } else {
-          document.body.style.paddingRight = ``;
-          this.$el.style.right = '';
+          this.fixBackface(false);
         }
       },
     },
@@ -36,7 +31,6 @@
     mounted() {
       // eslint-disable-next-line no-undef
       MicroModal.init({
-        disableScroll: true,
         disableFocus: true,
         awaitOpenAnimation: true,
         awaitCloseAnimation: true,
@@ -46,6 +40,39 @@
     methods: {
       openDrawer() {
         this.$store.commit('drawer/openDrawer');
+      },
+      fixBackface(isFixed) {
+        const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+        document.body.style.paddingRight = isFixed ? `${scrollbarWidth}px` : '';
+        this.$el.style.right = isFixed
+          ? `calc(6.5vw + ${scrollbarWidth}px)`
+          : '';
+
+        const scrollingElement = () => {
+          const browser = window.navigator.userAgent.toLowerCase();
+          if ('scrollingElement' in document) return document.scrollingElement;
+          if (browser.indexOf('webkit') > 0) return document.body;
+          return document.documentElement;
+        };
+
+        const scrollY = isFixed
+          ? scrollingElement().scrollTop
+          : parseInt(document.body.style.top || '0');
+
+        const styles = {
+          height: '100vh',
+          left: '0',
+          overflow: 'hidden',
+          position: 'fixed',
+          top: `${scrollY * -1}px`,
+          width: '100vw',
+        };
+
+        Object.keys(styles).forEach((key) => {
+          document.body.style[key] = isFixed ? styles[key] : '';
+        });
+
+        if (!isFixed) window.scrollTo(0, scrollY * -1);
       },
     },
   };
