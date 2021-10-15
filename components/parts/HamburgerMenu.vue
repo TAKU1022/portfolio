@@ -31,7 +31,6 @@
     mounted() {
       // eslint-disable-next-line no-undef
       MicroModal.init({
-        // disableScroll: true,
         disableFocus: true,
         awaitOpenAnimation: true,
         awaitCloseAnimation: true,
