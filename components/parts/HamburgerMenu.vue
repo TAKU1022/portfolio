@@ -41,6 +41,7 @@
       openDrawer() {
         this.$store.commit('drawer/openDrawer');
       },
+
       fixBackface(isFixed) {
         const scrollbarWidth = window.innerWidth - document.body.clientWidth;
         document.body.style.paddingRight = isFixed ? `${scrollbarWidth}px` : '';
