@@ -24,10 +24,9 @@
                     type="image/webp"
                   />
                   <img
-                    class="p-home-product__image"
                     :src="require(`~/assets/images/${product.image.png}`)"
-                    loading="lazy"
-                    alt=""
+                    :alt="`${product.name}のイメージ画像`"
+                    class="p-home-product__image"
                   />
                 </picture>
               </div>

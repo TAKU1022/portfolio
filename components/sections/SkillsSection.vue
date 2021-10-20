@@ -21,9 +21,9 @@
               class="p-home-skills__list-item js-fade-in"
             >
               <img
-                class="p-home-skills__icon"
                 :src="require(`~/assets/images/${technology.icon}`)"
-                alt=""
+                :alt="`${technology.name}のアイコン`"
+                class="p-home-skills__icon"
               />
               <div>
                 <p class="p-home-skills__name">{{ technology.name }}</p>
