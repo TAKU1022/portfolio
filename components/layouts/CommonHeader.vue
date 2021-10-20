@@ -1,6 +1,6 @@
 <template>
   <header id="header" class="l-header">
-    <NuxtLink class="l-header__logo" to="/">
+    <NuxtLink v-scroll-to="{ el: '#top' }" to class="l-header__logo">
       <span class="l-header__logo-main">TAKU</span
       ><span class="l-header__logo-sub">portfolio</span>
     </NuxtLink>
@@ -117,7 +117,7 @@
   .l-header__link {
     font-size: 2rem;
     font-weight: bold;
-    padding: 8px;
+    padding: 0.8rem;
     position: relative;
     @include hover {
       &::after {
