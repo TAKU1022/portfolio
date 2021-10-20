@@ -207,7 +207,7 @@
   .p-home-skills__list-item {
     background-color: $primaryWhite;
     border-radius: 10px;
-    padding: 24px;
+    padding: 2.4rem;
   }
 
   .p-home-skills__icon {
