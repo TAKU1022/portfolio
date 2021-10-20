@@ -50,7 +50,7 @@
       return {
         productList: [
           {
-            url: 'https://github.com/TAKU1022/menu-forest',
+            url: 'https://github.com/TAKU1022/menu-forest/',
             image: {
               webp: 'menu-suggestion.png.webp',
               png: 'menu-suggestion.png',
@@ -60,13 +60,23 @@
               'TypeScirpt, Angular, AngularMaterial, Firebase(Authentication, Firestore, Storage, Functions), Algolia',
           },
           {
-            url: 'https://github.com/TAKU1022/portfolio',
+            url: 'https://github.com/TAKU1022/portfolio/',
             image: {
               webp: 'portfolio.png.webp',
               png: 'portfolio.png',
             },
             name: 'ポートフォリオ（当サイト）',
             technology: 'JavaScript, Vue.js(Nuxt.js), Netlify, micromodal.js',
+          },
+          {
+            url: 'https://github.com/TAKU1022/ec-demo/',
+            image: {
+              webp: 'demo-ec.png.webp',
+              png: 'demo-ec.png',
+            },
+            name: 'デモECサイト',
+            technology:
+              'TypeScript, React, Redux(Redux-Thunk), Material UI, Firebase(Authentication, Firestore)',
           },
         ],
       };
