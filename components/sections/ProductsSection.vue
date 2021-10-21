@@ -66,7 +66,7 @@
               png: 'portfolio.png',
             },
             name: 'ポートフォリオ（当サイト）',
-            technology: 'JavaScript, Vue.js(Nuxt.js), Netlify, micromodal.js',
+            technology: 'JavaScript, Vue.js(Nuxt.js), Netlify, Micromodal.js',
           },
           {
             url: 'https://github.com/TAKU1022/ec-demo/',
