@@ -14,3 +14,8 @@ Nuxt.jsとNetlifyを用いてポートフォリオサイトを作成しました
 - Nuxt.js(vue.js)
 - Netlify
 - micromodal.js
+
+## 機能一覧
+- Intersection Observerを用いたCSSアニメーション
+- nuxt-lazy-loadを用いた画像遅延読み込み
+- Micromodal.jsによるa11y（アクセシビリティ）に対応したメニューモーダル
