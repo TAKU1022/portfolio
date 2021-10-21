@@ -8,7 +8,7 @@ Nuxt.jsとNetlifyを用いてポートフォリオサイトを作成しました
 パフォーマンスとアクセシビリティを考慮したサイトになるよう心がけました。
 
 ## 公開URL
-[taku-portfolio.netlify.app/](https://taku-portfolio.netlify.app)
+[taku-portfolio.netlify.app](https://taku-portfolio.netlify.app)
 
 ## 使用技術
 - Nuxt.js(vue.js)
