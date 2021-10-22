@@ -109,7 +109,8 @@
               {
                 icon: 'icon-jquery.svg',
                 name: 'jQuery',
-                content: 'IE10以下の対応などにはjQueryを用いて開発を進めます。',
+                content:
+                  'チームの環境に合わせてjQueryを用いた開発も可能です。過去の業務ではIE10以下の対応にjQueryを使用した経験があります。',
               },
               {
                 icon: 'icon-angular.svg',
@@ -121,6 +122,12 @@
                 icon: 'icon-vue.svg',
                 name: 'Vue.js',
                 content: '当サイトをNuxt.jsで用いて開発しました。',
+              },
+              {
+                icon: 'icon-react.svg',
+                name: 'React',
+                content:
+                  'ReactとReduxを用いてデモのECサイトを個人開発しました。',
               },
             ],
           },
