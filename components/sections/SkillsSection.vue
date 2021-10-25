@@ -57,7 +57,7 @@
               },
               {
                 icon: 'icon-gulp.svg',
-                name: 'Gulp',
+                name: 'gulp',
                 content:
                   '普段の業務では、タスクランナーはGulpを使用しています。',
               },
